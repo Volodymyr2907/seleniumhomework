@@ -9,7 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class TestAndQuiz {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
 
         System.setProperty("webdriver.chrome.driver", "D:\\ITEA\\ChromeDriver\\chromedriver.exe");
@@ -52,7 +52,11 @@ public class TestAndQuiz {
         WebElement generateConfirmBox = webDriver.findElement(By.xpath("/html/body/div/div[12]/div/p[1]/button"));
         generateConfirmBox.click();
         webDriver.switchTo().alert().dismiss();
-        Thread.sleep(1000);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         WebElement dragAndDropFrom = webDriver.findElement(By.id("sourceImage"));
         WebElement dragAndDropTo = webDriver.findElement(By.id("targetDiv"));

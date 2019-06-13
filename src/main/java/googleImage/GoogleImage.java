@@ -20,6 +20,11 @@ public class GoogleImage {
         //open tab images
         WebElement elementImages = webDriver.findElement(By.xpath("//*[@id=\"hdtb-msb-vis\"]/div[2]/a"));
         elementImages.click();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
 
         // confirm that opened tab Images
